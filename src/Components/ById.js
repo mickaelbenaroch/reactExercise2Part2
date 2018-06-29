@@ -17,6 +17,7 @@ class ById extends React.Component {
     this.togglevisibility3 = this.togglevisibility3.bind(this);   
   }
 
+//Toggle the visibility of the first delivery div
 togglevisibility0(){
         //make the clicked div visible
         var a = document.getElementById("0");
@@ -30,6 +31,8 @@ togglevisibility0(){
         c.style.visibility = "hidden";
         d.style.visibility = "hidden";
 }
+
+//Toggle the visibility of the second delivery div
 togglevisibility1(){
         //make the clicked div visible
         var a = document.getElementById("1");
@@ -43,6 +46,8 @@ togglevisibility1(){
         c.style.visibility = "hidden";
         d.style.visibility = "hidden";
 }
+
+//Toggle the visibility of the third delivery div
 togglevisibility2(){
         //make the clicked div visible
         var a = document.getElementById("2");
@@ -56,6 +61,8 @@ togglevisibility2(){
         c.style.visibility = "hidden";
         d.style.visibility = "hidden";
 }
+
+//Toggle the visibility of the fourth delivery div
 togglevisibility3(){
         //make the clicked div visible
         var a = document.getElementById("3");
@@ -70,6 +77,7 @@ togglevisibility3(){
         d.style.visibility = "hidden";
 }
 
+//On init, get the delivery by those id's, by post method
  componentDidMount() {
   var ids = ['123456','1235225','2589613','1122558']  
   const url = "https://deliveriesws.herokuapp.com/getDeliveryByID";
@@ -100,8 +108,7 @@ togglevisibility3(){
   }  
  }
 
-
-
+//Displays all the availabe deliveries, that have been returned by the api
   eachDelivery (delivery,i) {
     return (          
       <div id={i} className="card" style={{width: 40 + 'rem', position: 'absolute', top: 200 + 'px', visibility: 'hidden'}}>

@@ -14,6 +14,7 @@ class ByRallyPoint extends React.Component {
     this.add        = this.add.bind(this);
   }
 
+//every delivery is added to the array of delivery
   add(ID,weight,state,sender,ownerid,ownername,oaddress) {
     this.setState(prevState => ({
       deliveries: [
@@ -30,6 +31,7 @@ class ByRallyPoint extends React.Component {
     }))
   }
 
+//on init get the deivery by raallyPoint, get method
  componentDidMount() { 
   var point = "Post_Office";
   const url = "https://deliveriesws.herokuapp.com/getDeliveriesByRallyPointType/?rallypoint=" + point;
@@ -52,7 +54,7 @@ class ByRallyPoint extends React.Component {
  }
 
 
-
+//Display all the available deliveries
   eachDelivery (delivery,i) {
     return (          
       <div id={i} className="card" style={{width: 40 + 'rem'}}>

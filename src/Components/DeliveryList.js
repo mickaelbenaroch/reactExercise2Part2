@@ -12,6 +12,7 @@ class DeliveryList extends Component {
     this.add        = this.add.bind(this)
   }
 
+//every delivery is added to the array of delivery
   add(ID,weight,state,sender,ownerid,ownername,oaddress) {
     this.setState(prevState => ({
       deliveries: [
@@ -28,6 +29,7 @@ class DeliveryList extends Component {
     }))
   }
 
+//on init get all the deivery from api, get method
  componentDidMount() {
   const url =
   "https://deliveriesws.herokuapp.com/getAllDeliveries";
@@ -52,7 +54,7 @@ class DeliveryList extends Component {
  }
 
 
-
+//Display all the available deliveries
   eachDelivery (delivery,i) {
     return (          
       <div className="card" style={{width: 40 + 'rem'}}>
